@@ -30,7 +30,7 @@ trait EmployeeDAO extends AbstractDAO[Employee] with
       query[Employee]
     }
     run(viewQuery)
-    val streamResult = stream(viewQuery, 100)
+    val streamResult = stream(viewQuery, 16)
     streamResult
   }
 
@@ -62,7 +62,7 @@ trait EmployeeDAO extends AbstractDAO[Employee] with
       }
     }
     run(groupQuery)
-    val streamResult = stream(groupQuery, 100)
+    val streamResult = stream(groupQuery, 16)
     streamResult
   }
 
@@ -71,7 +71,7 @@ trait EmployeeDAO extends AbstractDAO[Employee] with
       query[Employee].sortBy(employee => employee.salary)
     }
     run(sortQuery)
-    val streamResult = stream(sortQuery, 100)
+    val streamResult = stream(sortQuery, 16)
     streamResult
   }
 
